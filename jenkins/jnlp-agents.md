@@ -14,7 +14,7 @@
     ```
     $ service jenkins status
     ```
-    You should see status as ```active (running)```. If not, try running ```service jenkins start``` again and check the status.
+    You should see status as ```active (running)```. If not, try running ```service jenkins start``` and check the status again.
 4. Open a browser and go to `public-ip-of-jenkins-controller:8080`. Jenkins by-default uses port number 8080.
 
 5. Get the initial password by running the following command on the Ubuntu terminal:
@@ -23,7 +23,9 @@
     ```
 6. Copy the initial admin password from the terminal and paste in the **Administrator password** field on the **Unlock Jenkins** page.
 7. Click **Continue** and **Install suggested plugins**. 
+
     > Installing suggested plugins might take about 5 minutes.
+
 8. Create the first admin user by filling in the required details. Ensure you can recall the username and password later.
 9. Click **Save and Continue**. Note down the Jenkins URL and click **Save and Finish**.
 10. Click **Start using Jenkins**.
@@ -55,7 +57,9 @@ The worker node is now added (but not yet configured).
     ```
 3. (if already not open) Open a browser and go to `public-ip-of-jenkins-controller:8080`.
 4. Click the worker node name on the **Dashboard** > **Manage Jenkins** > **Manage node and clouds** page.
+    
     > It is the same Jenkins agent (worker node) that you added in Part B.
+
 5. Click on ```agent.jar``` under **Run from agent command line** option and save it on your local/host machine.
 6. Open [FileZilla](https://filezilla-project.org/) and connect to this VM (designated as Jenkins Agent / Worker Node).
     1. Click **Edit** > **Settings** > **SFTP** > **Add key file...** and add the relevant ```.pem``` or ```.ppk``` key for this VM (specific to EC2 instance).
@@ -69,6 +73,7 @@ The worker node is now added (but not yet configured).
     java -jar agent.jar -jnlpUrl http://13.235.2.113:8080/computer/trial%2Dworker%2D01/jenkins-agent.jnlp -secret a5700994b3d999d697ed77ea5b7bbe18b536b5e36eb1b87b773e595debfcc1b4 -workDir "/home/ubuntu/jenkins"
     ```
     > NOTE: The above command is only an example, do not use it as is.
+    
 10. Open the Ubuntu terminal on this VM (designated as Jenkins Agent / Worker Node) and run the command copied in the previous step.
 
 The worker node is now configured and connected to the **Jenkins Controller**. Repeat **Part B** and **Part C** for additional nodes.
