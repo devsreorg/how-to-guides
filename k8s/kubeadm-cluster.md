@@ -10,10 +10,7 @@
 
 Run these commands on all the VMs. The `t2.medium` VM is designated as the controller (master) node and the `t2.micro` VMs are designated as the worker nodes.
 
-1. 
-    ```
-    $ sudo apt-get update
-    ```
+1. `$ sudo apt-get update`
 2. 
     ```
     $ sudo apt-get install docker.io
