@@ -11,38 +11,14 @@
 Run these commands on all the VMs. The `t2.medium` VM is designated as the controller (master) node and the `t2.micro` VMs are designated as the worker nodes.
 
 1. `$ sudo apt-get update`
-2. 
-    ```
-    $ sudo apt-get install docker.io
-    ```
-3. 
-    ```
-    $ sudo apt-get update
-    ```
-4. 
-    ```
-    $ sudo apt-get install -y apt-transport-https ca-certificates curl
-    ```
-5. 
-    ```
-    $ sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
-    ```
-6. 
-    ```
-    $ echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
-    ```
-7. 
-    ```
-    $ sudo apt-get update
-    ```
-8. 
-    ```
-    $ sudo apt-get install -y kubelet kubeadm kubectl
-    ```
-9. 
-    ```
-    $ sudo apt-mark hold kubelet kubeadm kubectl
-    ```
+2. `$ sudo apt-get install docker.io`
+3. `$ sudo apt-get update`
+4. `$ sudo apt-get install -y apt-transport-https ca-certificates curl`
+5. `$ sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg`
+6. `$ echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list`
+7. `$ sudo apt-get update`
+8. `$ sudo apt-get install -y kubelet kubeadm kubectl`
+9. `$ sudo apt-mark hold kubelet kubeadm kubectl`
 
 ## Part B - Controller Node ONLY
 
